@@ -1,0 +1,25 @@
+{
+    "files.insertFinalNewline": true,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "ruff.lint.args": [
+        "--line-length=119",
+        "--extend-select=I",
+    ],
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/.venv/lib/python3.12/site-packages/"
+    ],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/.venv/lib/python3.12/site-packages/"
+    ],
+}
