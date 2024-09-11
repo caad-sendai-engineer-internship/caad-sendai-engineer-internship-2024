@@ -1,4 +1,5 @@
 import os
+import unicodedata
 from contextlib import contextmanager
 from typing import Annotated, Type
 
@@ -87,6 +88,9 @@ class PythonReplTool(BaseTool):
                     raise ToolException(
                         "plt.show() は実行できません。ファイルで出力してください。"
                     )
+
+                code = unicodedata.normalize("NFC", code)
+
                 repl = PythonREPL()
                 repl.locals = repl.globals
                 result = repl.run(code)
